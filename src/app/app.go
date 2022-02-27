@@ -7,12 +7,12 @@ import (
 	config "anvarisy.tech/cleangolang/src/app/config"
 	dbconfig "anvarisy.tech/cleangolang/src/app/database"
 	routerconfig "anvarisy.tech/cleangolang/src/app/router"
-	"github.com/gin-gonic/gin"
+	"github.com/go-chi/chi"
 	"github.com/spf13/viper"
 )
 
 type App struct {
-	router *gin.Engine
+	router *chi.Mux
 	db     *sql.DB
 }
 
@@ -33,7 +33,7 @@ func (app *App) GetEnvironment() string {
 	return viper.GetString("APP_ENV")
 }
 
-func (app *App) GetHttpRouter() *gin.Engine {
+func (app *App) GetHttpRouter() *chi.Mux {
 	return app.router
 }
 

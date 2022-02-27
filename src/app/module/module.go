@@ -1,7 +1,7 @@
 package module
 
-import "github.com/gin-gonic/gin"
+import "github.com/go-chi/chi"
 
 type ModuleInterface interface {
-	GetHttpRouter() *gin.Engine
+	GetHttpRouter() *chi.Mux
 }

@@ -20,12 +20,10 @@ func Init(app *app.App) usecase.RepositoryInterface {
 	}
 }
 
-func (a *Account) GetAccountByEmail(context context.Context, email string) (entity.Account, error) {
-	var account = entity.Account{}
-	var err error
-	return account, err
+func (a *Account) GetAccountByEmail(context context.Context, email string) (acc entity.Account, err error) {
+	return
 }
 
-func (a *Account) CreateAccount(context context.Context, account entity.Account) error {
-	return nil
+func (a *Account) CreateAccount(context context.Context, account entity.Account) (err error) {
+	return
 }
